@@ -1,0 +1,309 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>My Portfolio</title><style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* FLOATING BACKGROUND */
+.bg span {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 255, 200, 0.15);
+  border-radius: 50%;
+  animation: float 8s infinite ease-in-out;
+}
+
+.bg span:nth-child(1) { top: 10%; left: 20%; }
+.bg span:nth-child(2) { top: 50%; left: 70%; animation-delay: 2s; }
+.bg span:nth-child(3) { top: 80%; left: 30%; animation-delay: 4s; }
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+
+/* HEADER ANIMATION */
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+  animation: slideDown 1s ease;
+}
+
+/* PROFILE */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  animation: fadeUp 1s ease;
+  transition: 0.3s;
+}
+
+.profile:hover {
+  transform: scale(1.02);
+}
+
+.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #06b6d4;
+  animation: pulse 2s infinite;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  animation: typing 3s steps(30) 1;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #06b6d4;
+  width: fit-content;
+  margin: auto;
+}
+
+.hero p {
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+  animation-delay: 2s;
+}
+
+/* CARDS */
+.card {
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  animation: fadeUp 1s ease;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* TAGS */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.tags span {
+  padding: 8px 12px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #06b6d4, #3b82f6);
+  transition: 0.3s;
+}
+
+.tags span:hover {
+  transform: scale(1.1) rotate(2deg);
+}
+
+/* PROJECTS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.box {
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+  animation: fadeUp 1s ease;
+}
+
+.box:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.box img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.box:hover img {
+  transform: scale(1.1);
+}
+
+.box-content {
+  padding: 10px;
+}
+
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+  transform: scale(1.02);
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #06b6d4, #3b82f6);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #06b6d4;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  background: rgba(0,0,0,0.3);
+  animation: fadeIn 2s ease;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+</style></head><body><div class="bg">
+  <span></span><span></span><span></span>
+</div><header>
+  <h1>My Portfolio</h1>
+  <p>Web Developer • Student • Designer</p>
+</header><!-- PROFILE --><section class="profile">
+  <img src="1774744196612.png" alt="Profile">
+  <div>
+    <h2>CRIMZON D. TABUNIAR</h2>
+    <br></br>
+    <p> Future IT specialist.</p>
+  </div>
+</section><!-- HERO --><section class="hero">
+  <h2>Welcome to My Portfolio 👋</h2>
+  <p>I create modern school and personal web projects.</p>
+</section><!-- ABOUT --><section class="card">
+  <h2>About Me</h2>
+  <p>I am a student currently training at Lyceum Aparri.</p>
+</section><!-- HOBBIES --><section class="card">
+  <h2>Hobbies</h2>
+  <div class="tags">
+    <span>Exercise</span>
+    <span>Gaming</span>
+  </div>
+</section><!-- SKILLS --><section class="card">
+  <h2>Skills</h2>
+  <div class="tags">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>UI Design</span>
+  </div>
+</section><!-- SCHOOL PROJECTS --><section class="card">
+  <h2>School Projects</h2>
+  <div class="grid"><div class="box">
+  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+  <div class="box-content">
+    <h3>School Website</h3>
+    <p>Homepage project design.</p>
+  </div>
+</div>
+
+<div class="box">
+  <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0">
+  <div class="box-content">
+    <h3>Class Schedule</h3>
+    <p>Student timetable system.</p>
+  </div>
+</div>
+
+<div class="box">
+  <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
+  <div class="box-content">
+    <h3>Quiz App</h3>
+    <p>Simple online quiz system.</p>
+  </div>
+</div>
+
+  </div>
+</section><!-- CONTACT --><section class="card">
+  <h2>Contact Me</h2>  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="4" placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section><footer>
+  <p>© 2026 My Portfolio</p>
+</footer></body>
+</html>
